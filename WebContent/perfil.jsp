@@ -7,14 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Inicio Estudiante</h1>
- <%
- String nombre = request.getUserPrincipal().getName();
- out.println("<h2>"+nombre+"</h2>"); 
- %>
- <a href="../salir.jsp">Salir</a>
- <a href="../postular.jsp">Postular alojamiento</a>
- <a href="../Encuesta?alojamiento=5">Encuesta</a>
- <a href="../Perfil?nombre=<%=nombre %>">Mi perfil</a>
+<h1>MI PERFIL <%=(String)request.getAttribute("id") %></h1>
+<a href="">Mis reservaciones</a>
 </body>
 </html>

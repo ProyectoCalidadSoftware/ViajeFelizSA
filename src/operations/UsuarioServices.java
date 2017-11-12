@@ -13,5 +13,13 @@ public class UsuarioServices {
 		user = new UsuarioDAO();
 		user.registerUser(new UsuarioDTO(name, username, password));
 	}
+	
+	public String getNombreUsuario(String username) {
+		String nombre = "";
+		UsuarioDAO usuario = new UsuarioDAO();
+		UsuarioDTO usu = usuario.getUsuario(username);
+		nombre = usu.getName();
+		return nombre;
+	}
 
 }

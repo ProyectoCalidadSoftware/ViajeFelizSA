@@ -53,5 +53,32 @@ public class UsuarioDAO {
 		}
 		
 	}
+	
+	public UsuarioDTO getUsuario(String username) {
+		UsuarioDTO usuario = null;
+		try {
+			String usr = "";
+			String nombre = "";
+			String pwd = "";
+			query = "";
+			conexion = DatabaseConnection.getInstance().conectar();
+			sentencia = conexion.createStatement();
+			query = "SELECT * FROM usuario WHERE usu_login = '"+username+"';";
+			resulSet = sentencia.executeQuery(query);
+			
+			while (resulSet.next()) {
+				nombre = resulSet.getString("usu_nombre");
+				usr = resulSet.getString("usu_login");
+				pwd = resulSet.getString("usu_password");
+			}
+			
+			usuario = new UsuarioDTO(nombre, usr, pwd);
+					
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return usuario;
+	}
 
 }

@@ -8,5 +8,6 @@ public class Constantes {
 	public static Integer TIPO_DOBLE = 1;
 	public static Integer TIPO_FAMILIAR = 1;
 	public static Integer TIPO_MULTIPLE = 1;
-
+	public static Double CANTIDAD_PARAMETROS_ENCUESTA = 8.0;
+	
 }

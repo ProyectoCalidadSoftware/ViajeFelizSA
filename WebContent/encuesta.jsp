@@ -8,7 +8,8 @@
 </head>
 <body>
 <h1>ENCUESTA</h1>
-<form action="Publicar" method=post>
+<%String idAlojamiento = (String)request.getAttribute("alojamiento"); %>
+<form action="Encuesta?alojamiento=<%=idAlojamiento %>" method=post>
 <p>Ubicación: <input type="number" name="ubicacion" min="1" max="5" value="1">
 <p>Habitaciones: <input type="number" name="habitaciones" min="1" max="5" value="1">
 <p>Servicio: <input type="number" name="servicio" min="1" max="5" value="1">
