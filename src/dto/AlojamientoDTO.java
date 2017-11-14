@@ -2,6 +2,7 @@ package dto;
 
 public class AlojamientoDTO {
 	
+	private Integer id;
 	private String nombre;
 	private boolean tipo;
 	private Integer cantidadPersonas;
@@ -34,6 +35,14 @@ public class AlojamientoDTO {
 		this.descripcion = descripcion;
 		this.precio = precio;
 		
+	}
+	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getNombre() {

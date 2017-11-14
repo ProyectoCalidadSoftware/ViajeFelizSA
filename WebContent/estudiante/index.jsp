@@ -14,7 +14,8 @@
  %>
  <a href="../salir.jsp">Salir</a>
  <a href="../postular.jsp">Postular alojamiento</a>
+ <a href="../buscar.jsp">Buscar</a>
+ <a href="../Perfil?nombre=<%=nombre %>">Mis reservaciones</a>
  <a href="../Encuesta?alojamiento=5">Encuesta</a>
- <a href="../Perfil?nombre=<%=nombre %>">Mi perfil</a>
 </body>
 </html>

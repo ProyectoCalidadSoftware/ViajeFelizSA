@@ -23,6 +23,10 @@
   <servlet-name>Perfil</servlet-name>
   <servlet-class>servlets.Perfil</servlet-class>
  </servlet>
+ <servlet>
+  <servlet-name>Reservar</servlet-name>
+  <servlet-class>servlets.Reservar</servlet-class>
+ </servlet>
  <servlet-mapping>
   <servlet-name>RegistroUsuarios</servlet-name>
   <url-pattern>/registro</url-pattern>
@@ -42,6 +46,10 @@
  <servlet-mapping>
   <servlet-name>Perfil</servlet-name>
   <url-pattern>/perfil</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>Reservar</servlet-name>
+  <url-pattern>/reservar</url-pattern>
  </servlet-mapping>
  <security-constraint>
   <display-name>Example Security Constraint</display-name>

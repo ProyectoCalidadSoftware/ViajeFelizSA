@@ -32,8 +32,9 @@ public class Perfil extends HttpServlet {
 		// response.getWriter().append("Served at: ").append(request.getContextPath());
 		UsuarioServices usuarioServices = new UsuarioServices();
 		String nombre = usuarioServices.getNombreUsuario(request.getParameter("nombre"));
-		request.setAttribute("id", nombre);
-		request.getRequestDispatcher("perfil.jsp").forward(request, response);
+		System.out.println(nombre);
+		// request.setAttribute("id", nombre);
+		// request.getRequestDispatcher("perfil.jsp").forward(request, response);
 		
 	}
 

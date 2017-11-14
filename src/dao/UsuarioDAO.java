@@ -48,6 +48,7 @@ public class UsuarioDAO {
 			query = "INSERT INTO usuario_grupo (usg_usuario, usg_grupo) VALUES ('"+code+"', 2);";
 			sentencia.executeUpdate(query);
 			sentencia.close();
+			resulSet.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -73,7 +74,8 @@ public class UsuarioDAO {
 			}
 			
 			usuario = new UsuarioDTO(nombre, usr, pwd);
-					
+			resulSet.close();
+			sentencia.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -81,4 +83,24 @@ public class UsuarioDAO {
 		return usuario;
 	}
 
+	public Integer getIdUsuario(String username) {
+		Integer code = null;
+		try {
+			query = "";
+			conexion = DatabaseConnection.getInstance().conectar();
+			sentencia = conexion.createStatement();
+			query = "SELECT usu_codigo FROM usuario WHERE usu_login = '"+username+"';";
+			resulSet = sentencia.executeQuery(query);
+			while (resulSet.next()) {
+				code = resulSet.getInt("usu_codigo");
+			}
+			resulSet.close();
+			sentencia.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return code;
+		
+	}
+	
 }
